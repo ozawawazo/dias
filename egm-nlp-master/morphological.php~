@@ -1,0 +1,5 @@
+<?php
+echo "Hello World";
+system("LD_LIBRARY_PATH=/usr/local/lib python morphological.py");
+echo "The World";
+?>
