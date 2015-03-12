@@ -31,9 +31,8 @@ var svg = d3.select("#vis").append("svg")
 var background = svg.append("g");
 var vis = svg.append("g")
     .attr("transform", "translate(" + [w >> 1, h >> 1] + ")");
-
 var scale = 1;
-//    statusText = d3.select("#status");
+
 
 var box = [];
 function tagplacement(){
@@ -47,7 +46,7 @@ function tagplacement(){
 	});
     var rname,
 	r = 100000000; //rの最小値を求める
-    console.log(box);
+
     Object.keys(box).forEach(function(d){//NS配布
             Object.keys(box).forEach(function(dd){
                     if(box[d].name != box[dd].name && Math.abs(box[d].x0 - box[dd].x0) < (box[d].w + box[dd].w)/2 && Math.abs(box[d].y0 - box[dd].x0) < (box[d].h + box[dd].h)/2){
@@ -59,7 +58,6 @@ function tagplacement(){
                     rname = box[d].name;
             }
         });
-    console.log(rname);
 
     Object.keys(box).forEach(function(dd,i){//各点に対するRNS,LNS,TNS,DNSの定義
 	    box[dd].ns.forEach(function(d){
@@ -80,18 +78,6 @@ function tagplacement(){
     //tnsの作成
     console.log(box);
     Object.keys(box).forEach(function(d,i){
-	    /*
-       	    while(box[d].rtns.length != tnsbox.length){
-		tnsbox = [];
-		box[d].rtns.forEach(function(ddd){
-			tnsbox.push(ddd);
-			box[ddd].rns.forEach(function(dddd){
-				box[d].rtns.push(dddd);
-			    });
-		    });
-		    }
-	    */
-
 	    console.log("hoge");
 	    function rtns(i) {
 		var da = box[i];
